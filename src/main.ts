@@ -29,6 +29,42 @@ window.setInterval(() => {
   if (!document.hidden) updateConnectivity(navigator.onLine);
 }, 1_000);
 
+function waitForShellActivation(
+  registration: ServiceWorkerRegistration,
+): Promise<void> {
+  return new Promise((resolve, reject) => {
+    const observed = new Set<ServiceWorker>();
+    const finish = (error?: Error) => {
+      registration.removeEventListener('updatefound', inspect);
+      for (const worker of observed)
+        worker.removeEventListener('statechange', inspect);
+      if (error) reject(error);
+      else resolve();
+    };
+    const inspect = () => {
+      const workers = [
+        registration.installing,
+        registration.waiting,
+        registration.active,
+      ].filter((worker): worker is ServiceWorker => worker !== null);
+      for (const worker of workers) {
+        if (!observed.has(worker)) {
+          observed.add(worker);
+          worker.addEventListener('statechange', inspect);
+        }
+      }
+      if (registration.active?.state === 'activated') finish();
+      else if (workers.every((worker) => worker.state === 'redundant')) {
+        // Includes a failed candidate already removed before register resolved.
+        finish(new Error('Offline shell installation failed'));
+      }
+    };
+    registration.addEventListener('updatefound', inspect);
+    // Read states after subscribing: activation/failure may have already happened.
+    inspect();
+  });
+}
+
 async function installOfflineShell(): Promise<void> {
   const status = element('offline-shell');
   if (!('serviceWorker' in navigator)) {
@@ -47,7 +83,7 @@ async function installOfflineShell(): Promise<void> {
       `${import.meta.env.BASE_URL}sw.js`,
       { scope: import.meta.env.BASE_URL, updateViaCache: 'none' },
     );
-    await navigator.serviceWorker.ready;
+    await waitForShellActivation(registration);
     status.textContent = 'Ready for offline use';
     // Check on each online visit, including an already-controlled page.
     if (navigator.onLine) await registration.update();

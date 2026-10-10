@@ -16,14 +16,20 @@ const mime = {
 export function createPreviewServer(initialRoot) {
   let root = resolve(initialRoot);
   const server = createServer(async (request, response) => {
-    const url = new URL(request.url ?? '/', 'http://localhost');
-    if (!url.pathname.startsWith('/moneyszn/')) {
+    let pathname;
+    try {
+      pathname = decodeURIComponent(
+        new URL(request.url ?? '/', 'http://localhost').pathname,
+      );
+    } catch {
+      response.writeHead(400).end();
+      return;
+    }
+    if (!pathname.startsWith('/moneyszn/')) {
       response.writeHead(404).end();
       return;
     }
-    const relative =
-      decodeURIComponent(url.pathname.slice('/moneyszn/'.length)) ||
-      'index.html';
+    const relative = pathname.slice('/moneyszn/'.length) || 'index.html';
     const file = resolve(root, relative);
     if (!file.startsWith(`${root}${sep}`)) {
       response.writeHead(403).end();
