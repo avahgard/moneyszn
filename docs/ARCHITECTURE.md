@@ -16,6 +16,20 @@
 
 Its experimental HKDF/AES-GCM flow is not production approval. There is no approved PIN fallback, backup/recovery, migration, production threat model, or security review. Face ID is not guaranteed; system authentication may use a device passcode or another provider. Credentials are scoped to the site/RP ID; origin changes or credential deletion can make data unrecoverable. Desktop checks with mocked WebAuthn do not prove real-device PRF behavior. A compromised device or malicious application update is outside the experiment's demonstrated protection.
 
+## Security architecture research (TASK-002)
+
+TASK-002 supplies a proposed [threat model](security/THREAT_MODEL.md),
+[security architecture](security/SECURITY_ARCHITECTURE_PROPOSAL.md) and
+[POC-03 plan](../tasks/POC-03_PLAN.md). The proposal prefers a random encrypted
+local database key wrapped using verified WebAuthn PRF, session-only usable keys,
+and independent strong-passphrase portable snapshot backups. It recommends
+deferring the six-digit application PIN and choosing an isolated stable origin
+before sensitive enrollment. All these recommendations are **PROPOSED, NOT
+APPROVED**; the decision register D01-D08 is the source for unresolved choices.
+No production local storage, Vault, provider compatibility or security guarantee
+has been implemented or certified. POC source inspection and owner reports are
+bounded evidence, not independent production-security approval.
+
 ## Decisions still required
 
 Define the threat model, encryption and key lifecycle, provider support, unavailable/canceled-authentication behavior, recovery, and storage durability before implementing secure storage. A six-digit PIN is a desired UX feature, not an approved key derivation or cryptographic scheme.
@@ -26,7 +40,7 @@ The POC repositories remain untouched references. No source is imported, rewritt
 
 ## TASK-001 technical foundation
 
-The assigned technical preview uses strict TypeScript and Vite, with plain HTML
+The accepted technical preview uses strict TypeScript and Vite, with plain HTML
 and CSS and no UI framework or production dependencies. Node 24 LTS runs the
 locked development tools. Vitest covers worker lifecycle failure/ownership rules;
 Playwright exercises the built app in desktop/mobile Chromium, iPhone-profile
