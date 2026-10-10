@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#16362e" />
+    <meta
+      name="description"
+      content="MoneySZN technical PWA preview. No financial functionality."
+    />
+    <link rel="manifest" href="%BASE_URL%manifest.webmanifest" />
+    <link rel="icon" href="%BASE_URL%icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="%BASE_URL%icons/apple-touch-icon.png" />
+    <title>MoneySZN — Technical Preview</title>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Technical Preview</p>
+      <h1>MoneySZN</h1>
+      <p>
+        This is not yet a financial application. No financial data is collected
+        or stored.
+      </p>
+      <dl>
+        <dt>Version / build</dt>
+        <dd id="build"></dd>
+        <dt>Connectivity</dt>
+        <dd id="connectivity" role="status" aria-live="polite"></dd>
+        <dt>Offline shell</dt>
+        <dd id="offline-shell" role="status" aria-live="polite">Preparing…</dd>
+      </dl>
+      <p class="note">
+        Temporary technical screen. Product design and secure storage are still
+        pending.
+      </p>
+      <noscript
+        >JavaScript is required to enable the connectivity indicator and offline
+        installation.</noscript
+      >
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

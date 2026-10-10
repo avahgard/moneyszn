@@ -1,0 +1,42 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #16362e;
+  background: #f2f5f3;
+  font-synthesis: none;
+  line-height: 1.6;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 1.25rem;
+}
+main {
+  max-width: 38rem;
+  margin: 8vh auto;
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid #c7d7cf;
+  border-radius: 0.75rem;
+}
+h1 {
+  font-size: clamp(2rem, 9vw, 3rem);
+  line-height: 1.15;
+  margin: 0.5rem 0 1.25rem;
+}
+.eyebrow {
+  font-weight: 700;
+  margin: 0;
+}
+dt {
+  font-weight: 700;
+  margin-top: 0.8rem;
+}
+dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.note {
+  font-size: 0.9rem;
+}

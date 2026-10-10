@@ -20,6 +20,42 @@ Its experimental HKDF/AES-GCM flow is not production approval. There is no appro
 
 Define the threat model, encryption and key lifecycle, provider support, unavailable/canceled-authentication behavior, recovery, and storage durability before implementing secure storage. A six-digit PIN is a desired UX feature, not an approved key derivation or cryptographic scheme.
 
-POC-03 must inform the portable encrypted Vault format and its validation, recovery, and compatibility rules. Select a stable hosting origin with credential scope in mind. Architect must also select the application stack and supported platform matrix; Designer will define the product UI separately.
+POC-03 must inform the portable encrypted Vault format and its validation, recovery, and compatibility rules. Select a stable hosting origin with credential scope in mind. Architect must also select the final UI stack and supported platform matrix; Designer will define the product UI separately.
 
 The POC repositories remain untouched references. No source is imported, rewritten, redeployed, or deleted as part of MoneySZN foundation work.
+
+## TASK-001 technical foundation
+
+The assigned technical preview uses strict TypeScript and Vite, with plain HTML
+and CSS and no UI framework or production dependencies. Node 24 LTS runs the
+locked development tools. Vitest covers worker lifecycle failure/ownership rules;
+Playwright exercises the built app in desktop/mobile Chromium, iPhone-profile
+WebKit, and Firefox. Emulation does not certify real Safari or Android behavior.
+
+The manifest and worker scope resolve under `/moneyszn/`. Vite emits a worker
+whose precache lists the generated shell, scripts, styles, manifest, and icons.
+The cache name hashes those bytes. Installation caches every asset before
+activation; failed installs remove the partial candidate. Activation deletes
+only older `moneyszn-shell-v1-` caches and claims clients. An already controlled
+page reloads when the new worker takes over. Navigations use network first with
+the installed shell as offline fallback; listed assets use cache first. Unknown
+resources and other-origin/app requests are left to the browser. Online visits
+check for worker updates. An offline device updates after reconnecting and
+revisiting; browser storage eviction still requires another online installation.
+
+Only static technical assets are cached. No IndexedDB, localStorage, credentials,
+financial records, or Vault implementation exists. There is no telemetry or CDN.
+`build-info.json` and the screen record version and build commit (a CI PR build may
+identify GitHub's test merge commit). Local uncommitted builds record the current
+HEAD and are not exact committed candidates.
+
+Connectivity follows the browser's online flag. Events update the indicator
+immediately; visibility/pageshow and a one-second visible-page refresh cover
+missed reconnect events observed in Firefox after offline navigation. Refresh
+makes no network requests and changes the live status only when its text changes.
+
+`https://avahgard.github.io/moneyszn/` is provisionally authorized solely for a
+technical demonstration after review/merge. It does not approve credential scope,
+secure storage, or hosting for the future financial application. Other Pages
+applications may share this origin; future sensitive functionality requires a
+separate architectural decision and security review.
