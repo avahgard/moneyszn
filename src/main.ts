@@ -11,11 +11,23 @@ function element(id: string): HTMLElement {
 
 element('build').textContent = `${__APP_VERSION__} / ${__BUILD_ID__}`;
 function updateConnectivity(online: boolean): void {
-  element('connectivity').textContent = online ? 'Online' : 'Offline';
+  const status = element('connectivity');
+  const text = online ? 'Online' : 'Offline';
+  if (status.textContent !== text) status.textContent = text;
 }
 updateConnectivity(navigator.onLine);
 window.addEventListener('online', () => updateConnectivity(true));
 window.addEventListener('offline', () => updateConnectivity(false));
+document.addEventListener('visibilitychange', () =>
+  updateConnectivity(navigator.onLine),
+);
+window.addEventListener('pageshow', () => updateConnectivity(navigator.onLine));
+// Firefox can miss a reconnect event after offline worker-served navigation.
+// Read only the local browser flag; do not probe servers or repeatedly announce
+// unchanged status. Hidden pages refresh when they become visible again.
+window.setInterval(() => {
+  if (!document.hidden) updateConnectivity(navigator.onLine);
+}, 1_000);
 
 async function installOfflineShell(): Promise<void> {
   const status = element('offline-shell');

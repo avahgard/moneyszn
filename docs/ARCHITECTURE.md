@@ -49,6 +49,11 @@ financial records, or Vault implementation exists. There is no telemetry or CDN.
 identify GitHub's test merge commit). Local uncommitted builds record the current
 HEAD and are not exact committed candidates.
 
+Connectivity follows the browser's online flag. Events update the indicator
+immediately; visibility/pageshow and a one-second visible-page refresh cover
+missed reconnect events observed in Firefox after offline navigation. Refresh
+makes no network requests and changes the live status only when its text changes.
+
 `https://avahgard.github.io/moneyszn/` is provisionally authorized solely for a
 technical demonstration after review/merge. It does not approve credential scope,
 secure storage, or hosting for the future financial application. Other Pages
