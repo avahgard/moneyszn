@@ -1,0 +1,32 @@
+# Local secrets and private data (ignore rules are not a substitute for review).
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.vault
+*.vault.*
+*.csv
+secrets/
+private/
+local-data/
+
+# Generated artifacts and local tooling.
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.tools/
+*.log
+*.tsbuildinfo
+__pycache__/
+.venv/
+
+# Editor and operating-system files.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
