@@ -77,6 +77,10 @@ test('production shell loads, uses the subpath, and survives offline repeat navi
 
   await context.setOffline(true);
   await expect(page.locator('#connectivity')).toHaveText('Offline');
+  await context.setOffline(false);
+  await expect(page.locator('#connectivity')).toHaveText('Online');
+  await context.setOffline(true);
+  await expect(page.locator('#connectivity')).toHaveText('Offline');
   await page.reload();
   await expect(
     page.getByRole('heading', { name: 'MoneySZN', exact: true }),
@@ -92,7 +96,14 @@ test('production shell loads, uses the subpath, and survives offline repeat navi
     page.getByRole('heading', { name: 'MoneySZN', exact: true }),
   ).toBeVisible();
   await context.setOffline(false);
-  await expect(page.locator('#connectivity')).toHaveText('Online');
+  await expect
+    .poll(() =>
+      page.evaluate(() => ({
+        online: navigator.onLine,
+        indicator: document.getElementById('connectivity')?.textContent,
+      })),
+    )
+    .toEqual({ online: true, indicator: 'Online' });
   await page.goto('./');
   await expect(
     page.getByRole('heading', { name: 'MoneySZN', exact: true }),

@@ -10,12 +10,12 @@ function element(id: string): HTMLElement {
 }
 
 element('build').textContent = `${__APP_VERSION__} / ${__BUILD_ID__}`;
-function updateConnectivity(): void {
-  element('connectivity').textContent = navigator.onLine ? 'Online' : 'Offline';
+function updateConnectivity(online: boolean): void {
+  element('connectivity').textContent = online ? 'Online' : 'Offline';
 }
-updateConnectivity();
-window.addEventListener('online', updateConnectivity);
-window.addEventListener('offline', updateConnectivity);
+updateConnectivity(navigator.onLine);
+window.addEventListener('online', () => updateConnectivity(true));
+window.addEventListener('offline', () => updateConnectivity(false));
 
 async function installOfflineShell(): Promise<void> {
   const status = element('offline-shell');
