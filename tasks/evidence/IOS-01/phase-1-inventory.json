@@ -1,0 +1,249 @@
+[
+  {
+    "path": ".cache/ios01/11685247336.zip",
+    "bytes": 7870,
+    "sha256": "b922fad76150fc62ac6945266ee2583e5fee262497c6eadea8dfacf8ad587d80"
+  },
+  {
+    "path": ".cache/ios01/11688146896.zip",
+    "bytes": 7961,
+    "sha256": "1b69d58ad0d2fbfbd4dc04f3492d8f8c51f66e5ca0cc54e9a44dca02584d2451"
+  },
+  {
+    "path": ".cache/ios01/artifact-audit.json",
+    "bytes": 9642,
+    "sha256": "4b84b164922b434b881cd53be7bdad1b1be9efc5a74bc2057822388170be0c50"
+  },
+  {
+    "path": ".cache/ios01/audit-artifacts.mjs",
+    "bytes": 3222,
+    "sha256": "6e2e9a54a7a6f10e6d72d71fb9ed1db108a77fbacd2ef564d336ea54aba674d6"
+  },
+  {
+    "path": ".cache/ios01/probe-results.json",
+    "bytes": 86842,
+    "sha256": "ee8275696be33b9e1f878111da8cb7e6fc0335ac47832d98d8bd8ce0a69b47a7"
+  },
+  {
+    "path": ".cache/ios01/probe.log",
+    "bytes": 2331,
+    "sha256": "8f0ad8b29352ef3cd043327d0e0db45854c74a80d004ce91ebf74cb9abbf4d04"
+  },
+  {
+    "path": ".cache/ios01/cold-process-results.json",
+    "bytes": 1814,
+    "sha256": "b7baa83ff2ed50db62c9a152c8f656e7bebb0bed187bcd45a8a51a7782d927f5"
+  },
+  {
+    "path": ".cache/ios01/cold-process.log",
+    "bytes": 1506,
+    "sha256": "57e59999df1118e369960d1ee1b3023acbb1aa5cc6adf5c1792eeadebccebfd0"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-coherent-cold-page-offline.png",
+    "bytes": 25017,
+    "sha256": "acee167751bbc11a8a043b1f11075e5c36d5acdda63450b54da2c08d8fae326a"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-coherent-cold-page-offline.zip",
+    "bytes": 79418,
+    "sha256": "0f6e050ae6397f992760eaeb427fcb88752b80b7925cbc9275c0e9b14e494c99"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-cold-process.png",
+    "bytes": 25017,
+    "sha256": "acee167751bbc11a8a043b1f11075e5c36d5acdda63450b54da2c08d8fae326a"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-missing-cached-html-offline.png",
+    "bytes": 4254,
+    "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-missing-cached-html-offline.zip",
+    "bytes": 43051,
+    "sha256": "f05ea4e66ff680479db2718bce72e4f4d216bb4be26ab02142d14ca533f1ebf2"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-missing-cached-js-offline.png",
+    "bytes": 20691,
+    "sha256": "ac7e306d9bf2d21af2027f7c43b1f717f4ac0e5108abefc43f0bff1b7a3dc5fb"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-missing-cached-js-offline.zip",
+    "bytes": 73543,
+    "sha256": "b2554a9df4dcd14acb5bed75d2ec90f780bbc996482e1e5d5c62633c28f276b6"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-mixed-precache-html-a-worker-b.png",
+    "bytes": 20691,
+    "sha256": "ac7e306d9bf2d21af2027f7c43b1f717f4ac0e5108abefc43f0bff1b7a3dc5fb"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-mixed-precache-html-a-worker-b.zip",
+    "bytes": 70814,
+    "sha256": "99b612b21d5163d86f2fdc4d029bbbd4ecc45cd77948265d2791099a5b28e2cf"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-network-html-b-new-js-unavailable-controller-a.png",
+    "bytes": 20691,
+    "sha256": "ac7e306d9bf2d21af2027f7c43b1f717f4ac0e5108abefc43f0bff1b7a3dc5fb"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-network-html-b-new-js-unavailable-controller-a.zip",
+    "bytes": 56609,
+    "sha256": "699f3d41f88ed5546334e770c0a80740e91e5a0bb9c91ff72289a02f629b63b8"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-stale-online-html-a-controller-b.png",
+    "bytes": 20691,
+    "sha256": "ac7e306d9bf2d21af2027f7c43b1f717f4ac0e5108abefc43f0bff1b7a3dc5fb"
+  },
+  {
+    "path": ".cache/ios01/probes/chromium-stale-online-html-a-controller-b.zip",
+    "bytes": 56649,
+    "sha256": "bbae405cf93fdc2ee40faf5fc83e78ca424a746fc79cfe4fd2293ff165155e0e"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-coherent-cold-page-offline.png",
+    "bytes": 25122,
+    "sha256": "2f34796244ef075c0f2974007f9151749899d836a83d960ee65556658b512398"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-coherent-cold-page-offline.zip",
+    "bytes": 112575,
+    "sha256": "d18421f3e18788b81a8e8b35775081bde8cf09a80e0e49560cee7943ef8e5f30"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-cold-process.png",
+    "bytes": 25122,
+    "sha256": "2f34796244ef075c0f2974007f9151749899d836a83d960ee65556658b512398"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-missing-cached-html-offline.png",
+    "bytes": 37234,
+    "sha256": "636fe5bc93aa439298f41120f766051361dae6df86f2dae612a0f20133183271"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-missing-cached-html-offline.zip",
+    "bytes": 82576,
+    "sha256": "4055f694522634cbacf7f01084a627d02dffbe7a2e59b853e379fb5c967e45ab"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-missing-cached-js-offline.png",
+    "bytes": 21146,
+    "sha256": "385ab062b7dc24f32316c03036b4d786e18ca4dff964d8b8a1019868cc0570ad"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-missing-cached-js-offline.zip",
+    "bytes": 101946,
+    "sha256": "a9899994f9efce37df32fd4d10f17a4bcf2b352034142e7dd3b78f6cccc8de6e"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-mixed-precache-html-a-worker-b.png",
+    "bytes": 21146,
+    "sha256": "385ab062b7dc24f32316c03036b4d786e18ca4dff964d8b8a1019868cc0570ad"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-mixed-precache-html-a-worker-b.zip",
+    "bytes": 52224,
+    "sha256": "ca984a452ad00139ddec60c3e69ec036fcc29a796b95fcd052cb8de1707e09bd"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-network-html-b-new-js-unavailable-controller-a.png",
+    "bytes": 21146,
+    "sha256": "385ab062b7dc24f32316c03036b4d786e18ca4dff964d8b8a1019868cc0570ad"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-network-html-b-new-js-unavailable-controller-a.zip",
+    "bytes": 71089,
+    "sha256": "46fc6963d89c87261cec0dac2c4f28b4c9d12ea95a093c155e426e81c3845bd1"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-stale-online-html-a-controller-b.png",
+    "bytes": 21146,
+    "sha256": "385ab062b7dc24f32316c03036b4d786e18ca4dff964d8b8a1019868cc0570ad"
+  },
+  {
+    "path": ".cache/ios01/probes/firefox-stale-online-html-a-controller-b.zip",
+    "bytes": 71042,
+    "sha256": "fc11607bedc027dc5f1dfa70579ac4264a9ede8b0df8775d347d89fe2053da5c"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-coherent-cold-page-offline.png",
+    "bytes": 23253,
+    "sha256": "d1ca473e6d875560a69be26053d669c2055fd1019e0f30a04353483a45e15181"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-coherent-cold-page-offline.zip",
+    "bytes": 63204,
+    "sha256": "f039529de6e17e5fdcc54d7781003a3b0e38b6e392d8411d3ee2651674e9299b"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-cold-process.png",
+    "bytes": 23253,
+    "sha256": "d1ca473e6d875560a69be26053d669c2055fd1019e0f30a04353483a45e15181"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-missing-cached-html-offline.png",
+    "bytes": 5337,
+    "sha256": "a9ee0e843115e51d52acc6821a523163460792b9688284a4f4353540ca989bd6"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-missing-cached-html-offline.zip",
+    "bytes": 63256,
+    "sha256": "e7dc723cc240c910a76e504c581bd2f90db9e8a1a26069e543bfc62c9e014220"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-missing-cached-js-offline.png",
+    "bytes": 19410,
+    "sha256": "3b9c2b9af8d5567765b13b20f6d6db555dcae8521f2039b600f62d1f80a3c25b"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-missing-cached-js-offline.zip",
+    "bytes": 77904,
+    "sha256": "d47b5e39d3ee1bd47baa9edcf1bed22e38edd370c734f7dd791b9c41d1fec493"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-mixed-precache-html-a-worker-b.png",
+    "bytes": 19410,
+    "sha256": "3b9c2b9af8d5567765b13b20f6d6db555dcae8521f2039b600f62d1f80a3c25b"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-mixed-precache-html-a-worker-b.zip",
+    "bytes": 60509,
+    "sha256": "f0df41a5dad91f32bd9db24d4065d0cc684e0ffafc03935ba52c99b744b87476"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-network-html-b-new-js-unavailable-controller-a.png",
+    "bytes": 19410,
+    "sha256": "3b9c2b9af8d5567765b13b20f6d6db555dcae8521f2039b600f62d1f80a3c25b"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-network-html-b-new-js-unavailable-controller-a.zip",
+    "bytes": 60069,
+    "sha256": "eece8093341af6b0e96b8a8fa092e86f27c1717a67d474cde224d0eea4a4d374"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-stale-online-html-a-controller-b.png",
+    "bytes": 19410,
+    "sha256": "3b9c2b9af8d5567765b13b20f6d6db555dcae8521f2039b600f62d1f80a3c25b"
+  },
+  {
+    "path": ".cache/ios01/probes/webkit-stale-online-html-a-controller-b.zip",
+    "bytes": 60049,
+    "sha256": "9320529f7122c99a039505c5ea446cf2a5464b0d6bc73912d9a825aab80f3a5c"
+  },
+  {
+    "path": "tasks/evidence/IOS-01/reproduce.mjs",
+    "version": "phase-1-before-preservation-hardening",
+    "bytes": 8387,
+    "sha256": "072a2b91ce45f3243370d0de2c174c40286541f0fd29b3ba35d318af1acb4e8d"
+  },
+  {
+    "path": "tasks/evidence/IOS-01/cold-process.mjs",
+    "version": "phase-1-before-preservation-hardening",
+    "bytes": 4041,
+    "sha256": "596177a938518d765ebed6eed8c9c61c90d1833cbc0bd82658bf0ff0b08f74d1"
+  }
+]

@@ -1,0 +1,841 @@
+{
+  "provenance": "Phase 1 actual Windows desktop probes. Deliberately injected faults; not real-iPhone traces or product acceptance.",
+  "probes": [
+    {
+      "engine": "chromium",
+      "scenario": "coherent-cold-page-offline",
+      "url": "http://127.0.0.1:11281/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "connectivity": "Offline",
+        "status": "Ready for offline use",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 12
+    },
+    {
+      "engine": "chromium",
+      "scenario": "mixed-precache-html-a-worker-b",
+      "url": "http://127.0.0.1:7185/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: net::ERR_INTERNET_DISCONNECTED"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 12
+    },
+    {
+      "engine": "chromium",
+      "scenario": "stale-online-html-a-controller-b",
+      "url": "http://127.0.0.1:2031/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 14
+    },
+    {
+      "engine": "chromium",
+      "scenario": "network-html-b-new-js-unavailable-controller-a",
+      "url": "http://127.0.0.1:4065/moneyszn/",
+      "before": {
+        "build": "0.1.0 / 084da18b2d00ba5e4ef90b918cc4b48badf1fd26",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029",
+            "entries": [
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 14
+    },
+    {
+      "engine": "chromium",
+      "scenario": "missing-cached-js-offline",
+      "url": "http://127.0.0.1:14511/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "deletedForSimulation": true,
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": ["Failed to load resource: net::ERR_FAILED"],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 12
+    },
+    {
+      "engine": "chromium",
+      "scenario": "missing-cached-html-offline",
+      "url": "http://127.0.0.1:11749/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "deletedForSimulation": true,
+      "navigationError": "Error: page.goto: net::ERR_FAILED at http://127.0.0.1:11749/moneyszn/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:11749/moneyszn/\", waiting until \"load\"\u001b[22m\n",
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "after": {
+        "inspectionError": "Error: page.evaluate: TypeError: Cannot read properties of undefined (reading 'keys')\n    at eval (eval at evaluate (:370:30), <anonymous>:2:46)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+      },
+      "requestCount": 12
+    },
+    {
+      "engine": "webkit",
+      "scenario": "coherent-cold-page-offline",
+      "url": "http://127.0.0.1:9546/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "connectivity": "Offline",
+        "status": "Ready for offline use",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 13
+    },
+    {
+      "engine": "webkit",
+      "scenario": "mixed-precache-html-a-worker-b",
+      "url": "http://127.0.0.1:9557/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: WebKit encountered an internal error"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 13
+    },
+    {
+      "engine": "webkit",
+      "scenario": "stale-online-html-a-controller-b",
+      "url": "http://127.0.0.1:9564/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 15
+    },
+    {
+      "engine": "webkit",
+      "scenario": "network-html-b-new-js-unavailable-controller-a",
+      "url": "http://127.0.0.1:9571/moneyszn/",
+      "before": {
+        "build": "0.1.0 / 084da18b2d00ba5e4ef90b918cc4b48badf1fd26",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029",
+            "entries": [
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/icons/icon-512.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 15
+    },
+    {
+      "engine": "webkit",
+      "scenario": "missing-cached-js-offline",
+      "url": "http://127.0.0.1:9578/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "deletedForSimulation": true,
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: FetchEvent.respondWith received an error: TypeError: Load failed"
+      ],
+      "pageErrors": [
+        "TypeError: Load failed",
+        "/127.0.0.1:9578/moneyszn/assets/index-Dd5G5mGz.js."
+      ],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 13
+    },
+    {
+      "engine": "webkit",
+      "scenario": "missing-cached-html-offline",
+      "url": "http://127.0.0.1:9586/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "deletedForSimulation": true,
+      "navigationError": "Error: page.goto: Response served by service worker is an error\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:9586/moneyszn/\", waiting until \"load\"\u001b[22m\n",
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "Failed to load resource: Response served by service worker is an error"
+      ],
+      "pageErrors": [
+        "Response served by service worker is an error",
+        "Cannot load ."
+      ],
+      "after": {
+        "inspectionError": "Error: page.evaluate: TypeError: undefined is not an object (evaluating 'window.caches.keys')"
+      },
+      "requestCount": 13
+    },
+    {
+      "engine": "firefox",
+      "scenario": "coherent-cold-page-offline",
+      "url": "http://127.0.0.1:9598/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "connectivity": "Offline",
+        "status": "Ready for offline use",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 23
+    },
+    {
+      "engine": "firefox",
+      "scenario": "mixed-precache-html-a-worker-b",
+      "url": "http://127.0.0.1:9609/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "[JavaScript Warning: \"Loading failed for the module with source “http://127.0.0.1:9609/moneyszn/assets/index-PxopXoVv.js”.\" {file: \"http://127.0.0.1:9609/moneyszn/\" line: 15}]"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 23
+    },
+    {
+      "engine": "firefox",
+      "scenario": "stale-online-html-a-controller-b",
+      "url": "http://127.0.0.1:9620/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "[JavaScript Warning: \"Loading failed for the module with source “http://127.0.0.1:9620/moneyszn/assets/index-PxopXoVv.js”.\" {file: \"http://127.0.0.1:9620/moneyszn/\" line: 15}]"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 15
+    },
+    {
+      "engine": "firefox",
+      "scenario": "network-html-b-new-js-unavailable-controller-a",
+      "url": "http://127.0.0.1:9623/moneyszn/",
+      "before": {
+        "build": "0.1.0 / 084da18b2d00ba5e4ef90b918cc4b48badf1fd26",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029"
+        ]
+      },
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "[JavaScript Warning: \"Loading failed for the module with source “http://127.0.0.1:9623/moneyszn/assets/index-Dd5G5mGz.js”.\" {file: \"http://127.0.0.1:9623/moneyszn/\" line: 15}]"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029",
+            "entries": [
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-PxopXoVv.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 15
+    },
+    {
+      "engine": "firefox",
+      "scenario": "missing-cached-js-offline",
+      "url": "http://127.0.0.1:9626/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "deletedForSimulation": true,
+      "navigationError": null,
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "[JavaScript Error: \"Failed to load ‘http://127.0.0.1:9626/moneyszn/assets/index-Dd5G5mGz.js’. A ServiceWorker passed a promise to FetchEvent.respondWith() that rejected with ‘TypeError: NetworkError when attempting to fetch resource.’.\" {file: \"http://127.0.0.1:9626/moneyszn/sw.js\" line: 54}]",
+        "[JavaScript Warning: \"Loading failed for the module with source “http://127.0.0.1:9626/moneyszn/assets/index-Dd5G5mGz.js”.\" {file: \"http://127.0.0.1:9626/moneyszn/\" line: 15}]"
+      ],
+      "pageErrors": [],
+      "after": {
+        "heading": "MoneySZN",
+        "build": "",
+        "connectivity": "",
+        "status": "Preparing…",
+        "controller": "activated",
+        "active": "activated",
+        "shells": [
+          {
+            "name": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+            "entries": [
+              "/moneyszn/assets/index-Dq8WLliC.css",
+              "/moneyszn/index.html",
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/icon-512.png",
+              "/moneyszn/icons/apple-touch-icon.png"
+            ],
+            "htmlReferences": [
+              "/moneyszn/manifest.webmanifest",
+              "/moneyszn/icons/icon-192.png",
+              "/moneyszn/icons/apple-touch-icon.png",
+              "/moneyszn/assets/index-Dd5G5mGz.js",
+              "/moneyszn/assets/index-Dq8WLliC.css"
+            ]
+          }
+        ]
+      },
+      "requestCount": 33
+    },
+    {
+      "engine": "firefox",
+      "scenario": "missing-cached-html-offline",
+      "url": "http://127.0.0.1:9649/moneyszn/",
+      "before": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "deletedForSimulation": true,
+      "navigationError": "Error: page.goto: NS_ERROR_OFFLINE\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:9649/moneyszn/\", waiting until \"load\"\u001b[22m\n",
+      "probeAssertion": "confirmed expected outcome",
+      "consoleErrors": [
+        "[JavaScript Warning: \"“127.0.0.1” has been classified as a bounce tracker. If it does not receive user activation within the next 3,600 seconds it will have its state purged.\"]"
+      ],
+      "pageErrors": [],
+      "after": {
+        "inspectionError": "Error: page.evaluate: Execution context was destroyed, most likely because of a navigation"
+      },
+      "requestCount": 23
+    }
+  ],
+  "processRestarts": [
+    {
+      "engine": "chromium",
+      "profile": ".cache/ios01/profiles/1791683176568-chromium",
+      "url": "http://127.0.0.1:3975/moneyszn/",
+      "beforeBuild": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+      "after": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "connectivity": "Offline",
+        "readiness": "Ready for offline use",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "outcome": "PASS desktop persistent-profile browser-process restart"
+    },
+    {
+      "engine": "webkit",
+      "profile": ".cache/ios01/profiles/1791683176568-webkit",
+      "url": "http://127.0.0.1:1141/moneyszn/",
+      "beforeBuild": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+      "after": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "connectivity": "Offline",
+        "readiness": "Ready for offline use",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "outcome": "PASS desktop persistent-profile browser-process restart"
+    },
+    {
+      "engine": "firefox",
+      "profile": ".cache/ios01/profiles/1791683176568-firefox",
+      "url": "http://127.0.0.1:2381/moneyszn/",
+      "beforeBuild": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+      "after": {
+        "build": "0.1.0 / b413446d56f4d8b3997160ba29156d4fd62e4f92",
+        "connectivity": "Offline",
+        "readiness": "Ready for offline use",
+        "controller": "activated",
+        "caches": [
+          "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5"
+        ]
+      },
+      "outcome": "PASS desktop persistent-profile browser-process restart"
+    }
+  ]
+}
