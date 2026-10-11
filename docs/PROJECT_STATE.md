@@ -33,6 +33,16 @@ only on `task/TASK-002`. Its [threat model](security/THREAT_MODEL.md),
 independent security review and explicit Architect decisions. No security
 implementation or application-security PASS is claimed.
 
+Independent Security Review of `217ffd063f71018226bbb2532b0aa33faf04f6c0`
+returned **CHANGES REQUIRED** for Medium finding **SR-01**: descendant preview
+origins may exercise production-RP credentials. The bounded SR-01 documentation
+correction is prepared for independent re-review, not Reviewer-approved closure.
+D01 remains **UNRESOLVED** pending approval of the actual host/RP, eligible
+origins, deployment/access controls (including old previews) and real-device
+evidence. D01-D08 remain **PROPOSED, NOT APPROVED**. The local independent review
+and original failure evidence are preserved under `.cache/security-review/TASK-002/`
+(ignored local evidence, not an archival commit).
+
 ## Completed feasibility work
 
 POC-01 and POC-02 are accepted technical experiments, as reported by the project
@@ -55,9 +65,24 @@ separates source observations, historical Builder results and owner device repor
 - Final UI stack, data model, supported platform/version matrix, and storage durability strategy. TASK-001 selects only a framework-free TypeScript/Vite technical foundation.
 - Product UI through a separate Designer workflow; ordinary CSV export behavior.
 
+## Outstanding reliability investigation
+
+**CI-01 — OPEN, separate reliability investigation:** Independent review records
+intermittent WebKit post-update offline readiness in
+[run 38095894839](https://github.com/avahgard/moneyszn/actions/runs/38095894839)
+at head `217ffd063f71018226bbb2532b0aa33faf04f6c0`. Attempt 1 failed one browser
+test (15 passed / 1 failed); attempt 2 passed all 16 without source changes.
+After update takeover and fixture-B load, the first attempt stayed at
+`Preparing…` through the readiness assertion. Root cause remains **UNKNOWN**;
+rerun success establishes neither a harmless flake nor a proven application
+defect. Preserve original trace/logs and assign a separate bounded investigation
+of navigation, registration/worker/controller transitions and readiness. SR-01
+remediation does not change worker code, tests, workflow, timeouts or retries and
+does not close CI-01, regardless of the new commit's CI result.
+
 ## Next task
 
-Independently review TASK-002 and resolve/accept specific design decisions before
+Independently re-review SR-01 and resolve/accept specific design decisions before
 assigning implementation. No POC-03 implementation, TASK-003, hosting migration,
 deployment or real-financial-data use is authorized by this documentation task.
 Real iPhone/Android security verification remains future work.

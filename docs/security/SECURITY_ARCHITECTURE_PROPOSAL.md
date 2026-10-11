@@ -133,8 +133,10 @@ origin/RP, user-presence/user-verification flags and assertion signature using
 enrollment public-key metadata; validate through a reviewed parser. There is no
 remote account authentication or trusted server registry. The security goal is
 possession of PRF material sufficient to unwrap the DEK; local checks do not
-protect against replacement of the executing code. Determine the precise local
-verification profile in D02; do not copy POC-02's mocked checks as production proof.
+protect against replacement of the executing code. They also cannot stop malicious
+code on an RP-eligible descendant from omitting those checks and requesting PRF
+itself; see the hosting credential-boundary policy below. Determine the precise
+local verification profile in D02; do not copy POC-02's mocked checks as production proof.
 
 Cancel, timeout, missing PRF, wrong credential, corrupt wrapper and failed
 decrypt all remain locked and preserve existing bytes. Use bounded generic
@@ -367,11 +369,107 @@ WebAuthn RP ID is a domain, not a URL path: the preview's exact-host RP would be
 `avahgard.github.io`, not `/moneyszn/`. Sibling apps must be treated as trusted
 first-party code if credentials/data ever share that origin.
 
+### Credential scope and descendant previews (SR-01)
+
+WebAuthn RP ID scope is **not identical to same-origin storage isolation**.
+An HTTPS descendant may request an RP ID that is a registrable domain suffix of
+its own host. Thus, with RP ID `example-project.pages.dev`, an eligible origin
+such as `https://branch.example-project.pages.dev` may exercise that RP's
+credentials despite having a different storage origin. This is a scope rule,
+not proof of credential/provider availability on a particular device.
+[WebAuthn RP ID rules](https://www.w3.org/TR/webauthn-3/#relying-party-identifier).
+The current [Public Suffix List](https://publicsuffix.org/list/public_suffix_list.dat)
+lists `pages.dev`, not each project's hostname; recheck actual eligibility when
+evaluating D01. Use of the exact project host as RP ID does not exclude descendants.
+
+Cloudflare documents branch aliases such as `development.<project>.pages.dev`
+and hash deployment addresses such as `<hash>.<project>.pages.dev`. These are
+descendants of the production project host. Old hash deployments can remain
+accessible after a branch alias moves; preview URLs are public by default.
+[Cloudflare preview deployments](https://developers.cloudflare.com/pages/configuration/preview-deployments/).
+An unreviewed eligible descendant is therefore a possible credential/PRF attack
+surface even when it cannot directly read production IndexedDB.
+
+Inference for this proposal: malicious descendant code could request the same
+credential and stable PRF input. Given a usable PRF result after successful user
+verification and a copied encrypted payload plus public wrapper metadata, it
+could derive the unwrap key. This is **not automatic decryption without user
+participation**; RP eligibility alone supplies neither the payload nor usable
+PRF. System/provider behavior still governs authentication and PRF availability.
+Production-only application assertion-origin checks cannot constrain the
+malicious caller, which can omit them; they are not a provider-enforced PRF
+release policy. [WebAuthn malicious-subdomain considerations](https://www.w3.org/TR/webauthn-3/#sctn-code-injection-attacks).
+
+### Proposed credential trust namespace policy
+
+- Production and unreviewed experimental deployments must occupy **disjoint
+  credential trust namespaces**. Prefer a separate test Pages project with a
+  distinct hostname, such as `example-project-test.pages.dev`, and its own exact
+  RP ID; it must not be a descendant of the production RP ID. Do not broaden the
+  RP ID or configure related-origin permissions to reconnect these namespaces.
+- Inventory the actual production host/RP, all RP-eligible descendants, branch
+  and old hash aliases/deployments, custom-domain mappings and any related-origin
+  configuration. Record each publisher, deployed code revision, access policy
+  and deployment/review controls, including who can change those controls.
+- Disabling future preview builds must **not** be assumed to revoke old
+  deployments. Verify existing aliases and direct hash URLs independently;
+  retirement/removal, access changes and their effectiveness require separate
+  authorization and evidence. A moved alias is not proof its old target vanished.
+- If any descendant remains RP-eligible, it must satisfy production trust and
+  publisher-review requirements. An access gate alone does not make unreviewed
+  code safe for a user who can reach it. No experimental code may execute there
+  using production credential authority.
+- A custom domain is not automatically secure. Assess its chosen RP ID,
+  eligible subdomains, DNS/delegations, aliases and related-origin permissions
+  under the same policy before enrollment.
+- CSP, URL paths, IndexedDB origin isolation and application-only origin checks
+  must not be the sole defense. Keep origin checks as local validation, but
+  control code/publishers across the complete credential scope.
+
+### Future fictional-passkey scope experiment
+
+Before D01 acceptance, separately authorize a bounded pre-production experiment
+at the intended hostname before any production credentials/data, with its actual
+deployment controls. A disposable topology may rehearse the comparison, but its
+results do not replace actual intended-host evidence required for D01. Use only
+a clearly named fictional passkey, synthetic encrypted note/wrapper and generated
+test material. Never enroll a production credential or use financial data. No
+projects, deployments or credentials are created by TASK-002 or SR-01 remediation.
+
+Compare four contexts:
+
+1. Intended production origin and proposed exact RP ID: establish fictional
+   credential enrollment and repeat PRF baseline before sensitive use. Label any
+   disposable-host rehearsal distinctly and repeat on the actual candidate later.
+2. An eligible descendant preview origin: explicitly request that parent RP ID
+   using the same fictional credential/input. Test without the production app's
+   origin check and with/without the synthetic copied ciphertext/metadata to
+   separate credential access from actual note recovery.
+3. An unrelated sibling origin: request the parent RP ID and record eligibility
+   rejection or unexpected acceptance; do not infer rejection from its name alone.
+4. A separate experimental RP namespace: confirm its own fictional credential
+   works, then test access to the parent namespace. Inventory related-origin
+   settings and do not enable cross-namespace authorization for the experiment.
+
+For each context record actual origin/RP/alias, browser RP eligibility or exact
+error, credential-selection availability, user-verification behavior and
+cancellation, PRF availability, authenticated synthetic unwrap result and actual
+PASS/FAIL/BLOCKED/NOT TESTED. Record candidate/configuration revision, date,
+supported device/OS/browser/provider and Safari versus installed-PWA context.
+Separate browser eligibility from credential absence or unsupported PRF; a mock
+cannot establish these device results. Do not log raw PRF/keys or credential
+secrets. Unexpected sibling/cross-namespace acceptance blocks D01 until explained.
+The actual production hostname, eligible origins, controls and supported-device
+evidence must still receive explicit Architect approval; a disposable experiment
+alone does not approve a future production deployment.
+
+### Hosting options and migration gate
+
 | Option                                                                      | Cost and isolation                                                                                                | Operational tradeoff                                                                                                                                                                      |
 | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Current project Pages path                                                  | No mandatory fee for this public preview; shares host with unrelated apps                                         | Reject for real financial storage/passkey enrollment. Different repository paths do not isolate trust.                                                                                    |
 | Dedicated GitHub account/organization Pages hostname used only for MoneySZN | Public static Pages option without mandatory subscription; dedicated host if no other apps are published under it | Account/host lifecycle must be secured and maintained. Other project Pages on that host would reintroduce sharing. Exact header capabilities need checking before accepting CSP strategy. |
-| Dedicated Cloudflare Pages project hostname, no custom domain or Functions  | Current Free plan offers static Pages and per-project hostname; proposed only                                     | Supports static `_headers` policies; verify exact host/RP eligibility, no unrelated content and preview isolation. Free limits/terms and provider availability can change.                |
+| Dedicated Cloudflare Pages project hostname, no custom domain or Functions  | Current Free plan offers static Pages and per-project hostname; proposed only                                     | Distinct storage origin does not exclude descendant preview credential authority. Require the disjoint test namespace and descendant controls above. Free terms/availability can change.  |
 | Owned custom domain on free static hosting                                  | Stronger control over future host migration if domain retained                                                    | Domain registration/renewal normally costs money; does not meet strict no mandatory recurring expense. Optional future owner-funded decision only.                                        |
 
 [GitHub Pages host model](https://pages.github.com/),
@@ -383,16 +481,20 @@ ownership. Publisher accounts are needed even though application users register
 no MoneySZN account.
 
 **Prefer a dedicated Cloudflare Pages project hostname under its current Free
-static tier**, subject to D01 acceptance and exact-host/platform validation;
+static tier**, subject to the credential trust policy above and unresolved D01;
 dedicated Pages account host is the viable GitHub-only alternative. No host has
 been reserved, configured or deployed by this task. Use the exact production
-hostname as RP ID, not a broader parent domain. Exclude unrelated applications,
-untrusted uploaded files and preview builds from production host authority.
+hostname as RP ID, not a broader parent domain, while treating eligible
+descendants as part of its credential trust boundary. Place unreviewed tests in
+a separate project/RP namespace. Exclude unrelated applications and untrusted
+uploads from production origin and credential authority.
 
 Before real credentials/data: select/reserve the host with authorization, review
-headers and deployment controls, port/test the technical shell there, verify
-offline updates and RP enrollment with fictional data, then independently review
-and accept the origin. Keep the old site technical-only with a navigation notice
+headers, all eligible origins and current/old descendant deployment controls;
+perform the separately authorized fictional-passkey scope experiment and port/test
+the technical shell. Verify offline updates, then independently review and obtain
+Architect approval of the actual topology/device evidence before enrollment.
+Keep the old site technical-only with a navigation notice
 after a separately authorized migration; never enroll sensitive preview passkeys
 to be migrated later. New origins cannot read old IndexedDB. If later migration
 is necessary, use a verified Vault file, reinstall, restore and enroll a new
@@ -411,7 +513,7 @@ authenticity system. Accept this browser-distribution limitation explicitly.
 
 | ID  | Decision required before implementation                                                                               | Proposed direction and evidence still needed                                                                                                                                         |
 | --- | --------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| D01 | Stable origin, exact RP ID, publisher trust and residual deployment risk                                              | Dedicated free static project host; validate headers, RP eligibility, isolation and authorized migration before sensitive enrollment.                                                |
+| D01 | Stable origin, RP-eligible origins, publisher trust and residual deployment risk                                      | UNRESOLVED: approve actual host/RP, eligible origins, current/old preview controls and fictional-passkey device evidence; require a disjoint test namespace before sensitive use.    |
 | D02 | PRF/local key hierarchy, assertion verification, supported browser/OS/provider matrix and unsupported UX              | PRF-wrapped random DEK, session-only keys; repeat/offline/restart/cancel/enrollment/provider-sync tests on actual iPhone and Android. Parser/crypto review required.                 |
 | D03 | Vault container/AAD, algorithms, KDF implementation/work factors, passphrase/Unicode rules and backward compatibility | Fresh backup DEK + Argon2id wrapper + AEAD; compare native PBKDF2 explicitly; vectors, tamper/resource tests and mobile KDF/memory measurements before profile acceptance.           |
 | D04 | Payload schema, restore replacement/retention and duplicate/conflict rules                                            | Whole snapshot; validated full replacement with no merge; approve fictional experimental schema separately from product model.                                                       |
