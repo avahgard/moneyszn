@@ -1,4 +1,5 @@
 import './style.css';
+import { observeShellUpdates } from './shell-updates';
 
 declare const __APP_VERSION__: string;
 declare const __BUILD_ID__: string;
@@ -73,11 +74,7 @@ async function installOfflineShell(): Promise<void> {
   }
   // An existing controlled page reloads once the replacement shell is active.
   // Initial installation does not reload and disrupt the first visit.
-  let controlled = Boolean(navigator.serviceWorker.controller);
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (controlled) window.location.reload();
-    controlled = true;
-  });
+  observeShellUpdates(navigator.serviceWorker, () => window.location.reload());
   try {
     const registration = await navigator.serviceWorker.register(
       `${import.meta.env.BASE_URL}sw.js`,
