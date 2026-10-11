@@ -1,7 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 import { createPreviewServer } from '../../scripts/preview-server.mjs';
 import type { AddressInfo } from 'node:net';
-import './lifecycle-diagnostics';
 
 async function installed(page: Page): Promise<void> {
   await expect(page.locator('#offline-shell')).toHaveText(
