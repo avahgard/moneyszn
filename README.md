@@ -4,10 +4,14 @@ A free, open-source personal finance PWA for iPhone and Android, designed for mo
 
 ## Current stage
 
-TASK-000 is accepted. [TASK-001](tasks/TASK-001.md) provides a temporary technical
-PWA preview with automated tests and a gated Pages workflow, pending independent
-review. It contains no financial functionality or sensitive storage. No public
-deployment is claimed by this documentation.
+TASK-000 and [TASK-001](tasks/TASK-001.md) are accepted. The
+[technical PWA preview](https://avahgard.github.io/moneyszn/) is deployed with
+automated checks and owner-reported 5/5 real-iPhone foundation acceptance; see
+[project state](docs/PROJECT_STATE.md) for bounded evidence. It contains no
+financial functionality or sensitive storage. [TASK-002](tasks/TASK-002.md)
+proposes [security architecture](docs/security/SECURITY_ARCHITECTURE_PROPOSAL.md)
+and a [POC-03 plan](tasks/POC-03_PLAN.md), pending independent security review and
+Architect decisions. Production financial-data security remains unapproved.
 
 Local workspace: `D:\Tools\MoneySZN`. Repository: [avahgard/moneyszn](https://github.com/avahgard/moneyszn). License: [MIT](LICENSE).
 
