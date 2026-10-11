@@ -398,7 +398,7 @@ participation**; RP eligibility alone supplies neither the payload nor usable
 PRF. System/provider behavior still governs authentication and PRF availability.
 Production-only application assertion-origin checks cannot constrain the
 malicious caller, which can omit them; they are not a provider-enforced PRF
-release policy. [WebAuthn malicious-subdomain considerations](https://www.w3.org/TR/webauthn-3/#sctn-code-injection-attacks).
+release policy. [WebAuthn malicious-subdomain considerations](https://www.w3.org/TR/webauthn-3/#sctn-code-injection).
 
 ### Proposed credential trust namespace policy
 
