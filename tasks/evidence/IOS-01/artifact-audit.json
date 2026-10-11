@@ -1,0 +1,297 @@
+{
+  "a": {
+    "build": {
+      "version": "0.1.0",
+      "commit": "084da18b2d00ba5e4ef90b918cc4b48badf1fd26"
+    },
+    "config": {
+      "base": "/moneyszn/",
+      "prefix": "moneyszn-shell-v1-",
+      "cacheName": "moneyszn-shell-v1-7642d64c296be6f01e972603bafb071ecda62df04ae06b930067a03379806029",
+      "assets": [
+        "/moneyszn/assets/index-PxopXoVv.js",
+        "/moneyszn/assets/index-Dq8WLliC.css",
+        "/moneyszn/index.html",
+        "/moneyszn/manifest.webmanifest",
+        "/moneyszn/icons/icon-192.png",
+        "/moneyszn/icons/icon-512.png",
+        "/moneyszn/icons/apple-touch-icon.png"
+      ]
+    },
+    "references": [
+      "/moneyszn/manifest.webmanifest",
+      "/moneyszn/icons/icon-192.png",
+      "/moneyszn/icons/apple-touch-icon.png",
+      "/moneyszn/assets/index-PxopXoVv.js",
+      "/moneyszn/assets/index-Dq8WLliC.css"
+    ],
+    "referencesAllPrecached": true,
+    "cacheHashMatches": true,
+    "assets": [
+      {
+        "path": "/moneyszn/assets/index-PxopXoVv.js",
+        "bytes": 2273,
+        "sha256": "7e78f1f10af35b2f3383076869be7280010e0aa8f5d83349de077aae2bb2e7c1"
+      },
+      {
+        "path": "/moneyszn/assets/index-Dq8WLliC.css",
+        "bytes": 478,
+        "sha256": "287e798ce86b1b14b0f47e0ce937c4414ef4211020419ca0a83295bd0cf6e3dc"
+      },
+      {
+        "path": "/moneyszn/index.html",
+        "bytes": 1558,
+        "sha256": "ddf4a0751e84b4d97cf203f5ce8bcae43836e37c7c43f3401470bb1da24e7ffc"
+      },
+      {
+        "path": "/moneyszn/manifest.webmanifest",
+        "bytes": 553,
+        "sha256": "02db10712d9ed30636410b34a81ec578a782fa2295a970c5ab4581233510706d"
+      },
+      {
+        "path": "/moneyszn/icons/icon-192.png",
+        "bytes": 1038,
+        "sha256": "455bc90ba13f5ee84fc84d81f7e1061c802ca81aaafb4914260d8b3e4cdc6453"
+      },
+      {
+        "path": "/moneyszn/icons/icon-512.png",
+        "bytes": 5260,
+        "sha256": "f25a442f0d4242424ba4838c4b58491aec3c4efc3a4d3f20b6631ce0e36a5a8d"
+      },
+      {
+        "path": "/moneyszn/icons/apple-touch-icon.png",
+        "bytes": 883,
+        "sha256": "5118ecb10e69262816d17823e999b2e27944023d99ba05301865eccc5a435696"
+      }
+    ]
+  },
+  "b": {
+    "build": {
+      "version": "0.1.0",
+      "commit": "b413446d56f4d8b3997160ba29156d4fd62e4f92"
+    },
+    "config": {
+      "base": "/moneyszn/",
+      "prefix": "moneyszn-shell-v1-",
+      "cacheName": "moneyszn-shell-v1-7c31b49ebbcab941484a90342ce826b56217c524faa8191ad688071d2de534c5",
+      "assets": [
+        "/moneyszn/assets/index-Dd5G5mGz.js",
+        "/moneyszn/assets/index-Dq8WLliC.css",
+        "/moneyszn/index.html",
+        "/moneyszn/manifest.webmanifest",
+        "/moneyszn/icons/icon-192.png",
+        "/moneyszn/icons/icon-512.png",
+        "/moneyszn/icons/apple-touch-icon.png"
+      ]
+    },
+    "references": [
+      "/moneyszn/manifest.webmanifest",
+      "/moneyszn/icons/icon-192.png",
+      "/moneyszn/icons/apple-touch-icon.png",
+      "/moneyszn/assets/index-Dd5G5mGz.js",
+      "/moneyszn/assets/index-Dq8WLliC.css"
+    ],
+    "referencesAllPrecached": true,
+    "cacheHashMatches": true,
+    "assets": [
+      {
+        "path": "/moneyszn/assets/index-Dd5G5mGz.js",
+        "bytes": 2527,
+        "sha256": "b5b2dacf556579e1efc0634bf982e0631acde63ee5395077fb6e6f58c8d630aa"
+      },
+      {
+        "path": "/moneyszn/assets/index-Dq8WLliC.css",
+        "bytes": 478,
+        "sha256": "287e798ce86b1b14b0f47e0ce937c4414ef4211020419ca0a83295bd0cf6e3dc"
+      },
+      {
+        "path": "/moneyszn/index.html",
+        "bytes": 1558,
+        "sha256": "031b005d1e39bfabcfb10785ff2146c3a141078d6b645ecc860b721c12539d43"
+      },
+      {
+        "path": "/moneyszn/manifest.webmanifest",
+        "bytes": 553,
+        "sha256": "02db10712d9ed30636410b34a81ec578a782fa2295a970c5ab4581233510706d"
+      },
+      {
+        "path": "/moneyszn/icons/icon-192.png",
+        "bytes": 1038,
+        "sha256": "455bc90ba13f5ee84fc84d81f7e1061c802ca81aaafb4914260d8b3e4cdc6453"
+      },
+      {
+        "path": "/moneyszn/icons/icon-512.png",
+        "bytes": 5260,
+        "sha256": "f25a442f0d4242424ba4838c4b58491aec3c4efc3a4d3f20b6631ce0e36a5a8d"
+      },
+      {
+        "path": "/moneyszn/icons/apple-touch-icon.png",
+        "bytes": 883,
+        "sha256": "5118ecb10e69262816d17823e999b2e27944023d99ba05301865eccc5a435696"
+      }
+    ]
+  },
+  "live": [
+    {
+      "path": "/moneyszn/",
+      "status": 200,
+      "sha256": "031b005d1e39bfabcfb10785ff2146c3a141078d6b645ecc860b721c12539d43",
+      "bytes": 1558,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "max-age=600",
+        "age": "381",
+        "etag": "W/\"6acae626-616\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "HIT",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/sw.js",
+      "status": 200,
+      "sha256": "66f95f12426ecce52ebe480d57907a813612e54d006e6e54efe6455b59624ca2",
+      "bytes": 2465,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "cache-control": "max-age=600",
+        "age": "558",
+        "etag": "W/\"6acae626-9a1\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "HIT",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/build-info.json",
+      "status": 200,
+      "sha256": "213bab7dc88dc5e4123105d851e66f5055a8262914b855213a061dc95a55c836",
+      "bytes": 71,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "\"6acae626-47\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/assets/index-Dd5G5mGz.js",
+      "status": 200,
+      "sha256": "b5b2dacf556579e1efc0634bf982e0631acde63ee5395077fb6e6f58c8d630aa",
+      "bytes": 2527,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "W/\"6acae626-9df\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/assets/index-Dq8WLliC.css",
+      "status": 200,
+      "sha256": "287e798ce86b1b14b0f47e0ce937c4414ef4211020419ca0a83295bd0cf6e3dc",
+      "bytes": 478,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "W/\"6acae626-1de\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/manifest.webmanifest",
+      "status": 200,
+      "sha256": "02db10712d9ed30636410b34a81ec578a782fa2295a970c5ab4581233510706d",
+      "bytes": 553,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "application/manifest+json; charset=utf-8",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "W/\"6acae626-229\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/icons/icon-192.png",
+      "status": 200,
+      "sha256": "455bc90ba13f5ee84fc84d81f7e1061c802ca81aaafb4914260d8b3e4cdc6453",
+      "bytes": 1038,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "image/png",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "\"6acae626-40e\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:08 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/icons/icon-512.png",
+      "status": 200,
+      "sha256": "f25a442f0d4242424ba4838c4b58491aec3c4efc3a4d3f20b6631ce0e36a5a8d",
+      "bytes": 5260,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "image/png",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "\"6acae626-148c\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:09 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/icons/apple-touch-icon.png",
+      "status": 200,
+      "sha256": "5118ecb10e69262816d17823e999b2e27944023d99ba05301865eccc5a435696",
+      "bytes": 883,
+      "matchesArtifact": true,
+      "headers": {
+        "content-type": "image/png",
+        "cache-control": "max-age=600",
+        "age": "0",
+        "etag": "\"6acae626-373\"",
+        "last-modified": "Sun, 11 Oct 2026 01:28:06 GMT",
+        "x-cache": "MISS",
+        "date": "Sun, 11 Oct 2026 01:42:09 GMT"
+      }
+    },
+    {
+      "path": "/moneyszn/assets/index-PxopXoVv.js",
+      "status": 404,
+      "sha256": "b620507312c5e97566a3c6cfaf99144fefc18a0da7d941401dfa0f5f58fb0368",
+      "bytes": 9379,
+      "matchesArtifact": null,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": null,
+        "age": "596",
+        "etag": "W/\"6abcf5c5-24a3\"",
+        "last-modified": null,
+        "x-cache": "HIT",
+        "date": "Sun, 11 Oct 2026 01:42:09 GMT"
+      }
+    }
+  ],
+  "checkedAt": "2026-10-11T01:42:08.027Z"
+}
