@@ -25,8 +25,16 @@ for (const scenario of ['held activation', 'interrupted precache'] as const) {
     let updating = false;
     let interrupted = scenario === 'interrupted precache';
     let failedAssets = 0;
+    let networkUnavailable = false;
     let activationGate: ServerResponse | undefined;
     const proxy = createServer((incoming, outgoing) => {
+      // Firefox's worker fetch can still reach the host with the Playwright
+      // context offline. Cut that transport too, so this scenario actually
+      // exercises the installed worker's fallback rather than online HTML B.
+      if (networkUnavailable) {
+        incoming.socket.destroy();
+        return;
+      }
       if (incoming.url === '/moneyszn/ci01-activation-gate') {
         activationGate = outgoing;
         return;
@@ -110,12 +118,14 @@ for (const scenario of ['held activation', 'interrupted precache'] as const) {
         });
         expect(navigations).toBe(2);
         // Failed replacement must leave the last complete shell usable offline.
+        networkUnavailable = true;
         await context.setOffline(true);
         await page.reload();
         await expect(page.locator('#build')).toHaveText('0.1.0 / fixture-a');
         await expect(page.locator('#offline-shell')).toHaveText(
           'Ready for offline use',
         );
+        networkUnavailable = false;
         await context.setOffline(false);
         interrupted = false;
         const takeover = page.waitForEvent('framenavigated', {
@@ -132,6 +142,7 @@ for (const scenario of ['held activation', 'interrupted precache'] as const) {
       await page.waitForFunction(
         () => navigator.serviceWorker.controller?.state === 'activated',
       );
+      networkUnavailable = true;
       await context.setOffline(true);
       await page.reload();
       await expect(page.locator('#build')).toHaveText('0.1.0 / fixture-b');
@@ -140,6 +151,7 @@ for (const scenario of ['held activation', 'interrupted precache'] as const) {
       );
       expect(errors).toEqual([]);
     } finally {
+      networkUnavailable = false;
       activationGate?.end();
       await context.setOffline(false);
       for (const server of [proxy, host.server])

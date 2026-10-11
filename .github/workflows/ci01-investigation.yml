@@ -16,8 +16,6 @@ jobs:
       fail-fast: false
       matrix:
         workers: [1, 2]
-    env:
-      CI01_DIAGNOSTICS: '1'
     steps:
       - uses: actions/checkout@v7
         with:
