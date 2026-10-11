@@ -1,0 +1,41 @@
+name: CI-01 bounded investigation
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    if: github.head_ref == 'fix/CI-01-webkit-readiness'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        workers: [1, 2]
+    env:
+      CI01_DIAGNOSTICS: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npx playwright install --with-deps webkit
+      - run: node scripts/build-test-fixtures.mjs
+      - run: npx playwright test tests/browser/pwa.spec.ts --project=webkit-iphone --workers=${{ matrix.workers }} --repeat-each=10
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: ci01-diagnostics-${{ matrix.workers }}
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7
